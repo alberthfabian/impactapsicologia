@@ -10,7 +10,7 @@ const size = {
 
 export const WHITE = '#E6E3F3';
 export const BLUE = '#2C4251';
-export const BLACK = '#3B3944';
+export const BLACK = '#1D1C20';
 export const PINK = '#EFC9CE';
 export const GREEN = '#647160';
 export const ROSEWOOD = '#965A64';

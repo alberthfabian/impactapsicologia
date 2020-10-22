@@ -1,14 +1,19 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { WHITE, BLUE } from '../Styled'
+import { WHITE, BLUE, device } from '../Styled';
 
 export const Head = styled.header `
   display: flex;
-  justify-content: space-between;
-  height: 80px;
+  @media ${device.mobileS} {
+    justify-content: space-between;
+  }
+  @media ${device.laptop} {
+    justify-content: space-around;
+  }
   background-color: ${BLUE};
-  padding-left: 3%;
-  padding-right: 3%;
+  article {
+    display: flex;
+  }
 `;
 
 export const StyledLink = styled(Link)`
@@ -19,14 +24,31 @@ export const StyledLink = styled(Link)`
       margin: 0px;
       font-family: 'Playfair Display', serif;
       color: ${WHITE};
+      margin-left: -15px;
+      @media ${device.mobileS} {
+        display: none;
+      }
+      @media ${device.mobileM} {
+        display: flex;
+      }
     }
 `;
 
 export const Logo = styled.img `
   height: 70px;
-  margin-left: 5%;
-  margin-top: 5px;
-  &:hover {
-    height: 75px;
-  }
 `;
+
+export const Social = styled.div ` 
+  align-items: center;
+  img {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+  }
+  @media ${device.mobileS} {
+    display: none;
+  }
+  @media ${device.laptop} {
+    display: flex;
+  }
+`

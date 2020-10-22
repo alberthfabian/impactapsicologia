@@ -1,16 +1,22 @@
 // import React, { useEffect, useMemo } from 'react';
-// import React, { useMemo, useState, useCallback } from 'react';
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useCallback } from 'react';
 
 const Server = React.createContext();
 
 export function ServerProvider(props) {
 
+  const[ menu, setMenu ] = useState(false);
+
+const modal = useCallback((e) => {
+  setMenu(e);
+},[]);
+
 const value = useMemo(() => {
   return ({
-
+    menu,
+    modal
   })
-}, [  ]);
+}, [ menu, modal ]);
 
   return <Server.Provider value={value} {...props} />
 }
